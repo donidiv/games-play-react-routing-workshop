@@ -26,6 +26,7 @@ export default function GameDetails () {
             gameId,
             formData.get('comment'),
         );    
+        newComment.owner = {email};
         
         setComments(state => [...state, {...newComment, author: {email}}]);
         
