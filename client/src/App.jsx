@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
 import * as authService from './services/authService';
-import AuthContext from "./contexts/AuthContext";
+import  { AuthProvider } from "./contexts/authContext";
 import Path from "./paths";
 
 import Header from "./components/header/Header";
@@ -52,7 +52,7 @@ function App() {
     isAuthenticated: !!auth.accessToken,
   };
   return (
-    <AuthContext.Provider value={values}>
+    <AuthProvider value={values}>
       <div id="box">
 
         <Header />
@@ -68,7 +68,7 @@ function App() {
         </Routes>
 
       </div>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 
