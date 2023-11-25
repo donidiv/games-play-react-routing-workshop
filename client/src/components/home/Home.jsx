@@ -1,4 +1,8 @@
-export default function Home () {
+import withAuth from "../../HOC/withAuth";
+
+function Home ({
+    email,
+}) {
     return (
         <section id="welcome-world">
 
@@ -51,7 +55,13 @@ export default function Home () {
 
                 {/* <!-- Display paragraph: If there is no games  --> */}
                 <p className="no-articles">No games yet</p>
+                <p>{email}</p>
             </div>
         </section>
     );
 }
+
+// export default withAuth(Home);
+const EnhancedHome = withAuth(Home);
+
+export default EnhancedHome;
